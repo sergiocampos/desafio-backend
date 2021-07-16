@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'desafio'
+    'desafio',
+    'log',
+    'tramitacao',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +97,12 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': '{}.NumericPasswordValidator'.format(VAL_MODULE)},
 ]
 
+
+REST_FRAMEWORK = [
+    DEFAUT_AUTHENTICATE_CLASSES : {
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    }
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

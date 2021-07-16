@@ -1,8 +1,8 @@
-1)
+1) Não foi abordado teste para a solução do desafio!
 
-2)
+2) Na segurança de acesso a url da api foi utilizado a library rest JWT. No settings.py a variável REST_FRAMEWORK define a autenticação!
 
-3)
+3) No controle de acesso ao serviço SOAP, a library zeep foi escolhida por ser versátil, desenvolvida em python!
 
 4)
 

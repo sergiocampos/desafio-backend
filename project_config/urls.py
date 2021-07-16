@@ -16,7 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework import routers
+from desafio_backend.desafio import viewsets as documentosviewsets
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+
+route = routers.DefaultRouter()
+
+route.register(r'documento/', documentosviewsets.DocumentoViewSet, basename="documento")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('desafio.urls')),
+    path('token/', TokenObtainPairView.as_view),
+    path('token/refresh/', TokenRefreshView.as_view),
+    path('', include('route.urls')),
 ]
